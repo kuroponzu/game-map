@@ -1,0 +1,34 @@
+<div>
+  <%= place.id %>
+  <%= link_to "#{place.name}", place %>
+</div>
+
+<div>
+  <%= form_for (@message),:url => {:action => :create} do |f| %>
+    <%= f.label :name,"名前:" %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :game,"ゲーム名:" %>
+    <%= f.text_field :game %>
+    <br>
+    <%= f.label :comment,"コメント" %>
+    <%= f.text_field :comment %>
+    <br>
+    <%= f.hidden_field :place_id, value: place.id %>
+    <%= f.submit("登録") %>
+  <%end%>
+</div>
+
+<div class="message">
+  <% place.messages.each do |m|%>
+    <hr>
+    <p>名前:<%=m.name%></p>
+    <p>ゲーム名:<%=m.game%></p>
+    <p>登録日:<%=convert_to_japantime(m.created_at)%></p>
+    <p>コメント</p>
+    <%=m.comment%>
+    <br>
+  <br>
+  <%end%>
+
+<div>
