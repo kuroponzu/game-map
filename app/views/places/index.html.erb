@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Places</h1>
+<h1>ゲーセンマップ</h1>
+<!-- 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
+      <th>店名</th>
+      <th>住所</th>
+      <th>緯度</th>
+      <th>経度</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +20,6 @@
         <td><%= place.description %></td>
         <td><%= place.latitude %></td>
         <td><%= place.longitude %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,10 +28,11 @@
 
 <br>
 
-<%= link_to 'New Place', new_place_path %>
+<%#= link_to 'New Place', new_place_path %>
+-->
 
-<div style='width: 600px;'>
-  <div id="map" style='width: 600px; height: 400px;'></div>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 600px;'></div>
 </div>
 
 <script type="text/javascript">
